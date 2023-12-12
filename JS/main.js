@@ -184,108 +184,92 @@ scene2.add(light4);
 // Chargez un modèle 3D glTF
 const loader2 = new GLTFLoader();
 
-let model3, model4, model5, model6, model7;
+let model3, model4, model5, model6, model7, model8, model9, model10;
 
 
-loader2.load('3D/CoupeGlace/GlasseTest3.gltf', (gltf) => {
+loader2.load('Models 3D/ice_cream_-_3december2020_day9.glb', (gltf) => {
    model3 = gltf.scene;
-  model3.position.set(-100, 0, 0);
-  model3.scale.set(100, 100, 100);
+  model3.position.set(0, 0, 0);
+ model3.scale.set(10, 10, 10);
 
-  model3.traverse((child) => {
-    if (child instanceof THREE.Mesh) {
-      // Accéder à différentes propriétés de l'objet child
-      console.log('Nom de l\'objet:', child.name);
-      console.log('Position de l\'objet:', child.position);
-      console.log('Rotation de l\'objet:', child.rotation);
-      console.log('Mise à l\'échelle de l\'objet:', child.scale);
-
-      // Assurez-vous que le matériau supporte les textures
-      if (child.material instanceof THREE.MeshStandardMaterial) {
-        // Désactivez les couleurs des sommets
-        child.material.vertexColors = false;
-
-        // Rendre le matériau transparent
-        child.material.transparent = true;
-
-        // Ajuster le niveau de transparence (0 = complètement transparent, 1 = complètement opaque)
-        child.material.opacity = 0.8;
-
-        // Appliquer la texture au matériau
-        // child.material.map = Texture;
-      }
-    }
-  });
-
+ 
   scene2.add(model3);
 }, undefined, (error) => {
   console.error('Erreur de chargement du modèle 3D', error);
 });
 
 
-
-// model3 = new THREE.MeshBasicMaterial({ map: Texture });
-const Texture = new THREE.TextureLoader().load('3D/CoupeGlace/test.avif');
-// Chargez le deuxième modèle 3D
-loader2.load('3D/strawberry/scene.gltf', (gltf) => {
-    model4 = gltf.scene;
-    model4.position.set(300, 0, 0); // Positionnez le deuxième modèle
-    model4.scale.set(100, 100, 100);
-    scene2.add(model4);
-}, undefined, (error) => {
-    console.error('Erreur de chargement du modèle 3D', error);
-});
-
-
-loader2.load('3D/CoupeGlace/GlasseTest4.gltf', (gltf) => {
-  model5 = gltf.scene;
-  model5.position.set(-100, 0, 0);
-  model5.scale.set(100, 100, 100);
-  console.log(model5);
-  scene2.add(model5);
-}, undefined, (error) => {
-  console.error('Erreur de chargement du modèle 3D', error);
-});
-
-
-loader2.load('3D/CoupeGlace/GlasseTest5.gltf', (gltf) => {
-  model6 = gltf.scene;
-  model6.position.set(-100, 0, 0);
-  model6.scale.set(100, 100, 100);
-  console.log(model6);
-  scene2.add(model6);
-}, undefined, (error) => {
-  console.error('Erreur de chargement du modèle 3D', error);
-});
-const Texture2 = new THREE.TextureLoader().load('3D/CoupeGlace/textures/food_0010_color_1k.jpg');
-loader2.load('3D/CoupeGlace/Boulle_de_glace/Glasse.gltf', (gltf) => {
-  model6 = gltf.scene;
-  model6.position.set(-150, 0, 0);
-  model6.scale.set(100, 100, 100);
+loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
+  model4 = gltf.scene;
+  model4.position.set(150, 80, -200);
+  model4.rotation.set(Math.PI / 2, Math.PI / 2, 0);
   
-  model6.material.map = Texture2;
-    
-  console.log(model7);
-  scene2.add(model7);
+  model4.scale.set(0.3, 0.3, 0.3);
+ scene2.add(model4);
 }, undefined, (error) => {
-  console.error('Erreur de chargement du modèle 3D', error);
+ console.error('Erreur de chargement du modèle 3D', error);
+});
+
+
+loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
+  model5 = gltf.scene;
+  model5.position.set(-300, 150, -200);
+  model5.rotation.set(Math.PI / 2, Math.PI / 1, 0);
+  
+  model5.scale.set(0.3, 0.3, 0.3);
+ scene2.add(model5);
+}, undefined, (error) => {
+ console.error('Erreur de chargement du modèle 3D', error);
+});
+
+loader2.load('Models 3D/splash (2).glb', (gltf) => {
+  model6 = gltf.scene;
+  model6.position.set(0, 300, 0);
+  model6.scale.set(50, 50, 50);
+   model6.rotation.set(Math.PI / 1, Math.PI / 2, 0);
+ scene2.add(model6);
+}, undefined, (error) => {
+ console.error('Erreur de chargement du modèle 3D', error);
+});
+
+loader2.load('Models 3D/splash.glb', (gltf) => {
+  model7 = gltf.scene;
+  model7.position.set(-50, 100, -100);
+  model7.scale.set(30, 30, 30);
+  // model7.rotation.set(Math.PI / 2, Math.PI / 2, 0);
+ scene2.add(model7);
+}, undefined, (error) => {
+ console.error('Erreur de chargement du modèle 3D', error);
+});
+
+let light5 = new THREE.PointLight(0xFFFFFF);
+light5.position.set(100, 200, 300);
+scene2.add(light5);
+
+loader2.load('Models 3D/ice_cube.glb', (gltf) => {
+  model8 = gltf.scene;
+  model8.position.set(100, 100, 200);
+  model8.scale.set(0.4, 0.4, 0.4);
+  model8.rotation.set(1,2, 0)
+
+ scene2.add(model8);
+}, undefined, (error) => {
+ console.error('Erreur de chargement du modèle 3D', error);
+});
+
+loader2.load('Models 3D/ice_cube.glb', (gltf) => {
+  model8 = gltf.scene;
+  model8.position.set(-100, 100, -200);
+  model8.scale.set(0.4, 0.4, 0.4);
+  model8.rotation.set(2,1, 0)
+
+ scene2.add(model8);
+}, undefined, (error) => {
+ console.error('Erreur de chargement du modèle 3D', error);
 });
 
 
 
-
-// loader.load('3D/FraiseV2/scene2.gltf', (gltf) => {
-//     model3 = gltf.scene;
-//     model3.position.set(-250, 100, 0); // Positionnez le deuxième modèle
-//     model3.scale.set(200, 200, 200);
-//      model3.rotation.x = Math.PI / 4.5; // Rotation de 45 degrés sur l'axe X
-//     model3.rotation.z = Math.PI / 2; // Rotation de 45 degrés sur l'axe X
-
-
-//     scene.add(model3);
-// }, undefined, (error) => {
-//     console.error('Erreur de chargement du modèle 3D', error);
-// });
 // Créez des contrôles de caméra OrbitControls
 const controls2 = new OrbitControls(camera3, renderer2.domElement);
 controls2.enableDamping = true;
@@ -299,9 +283,9 @@ function animate2() {
     // Effectuez des mises à jour ou des animations ici
 
     // Faites tourner chaque modèle sur lui-même
-    if (model3) {
-        model3.rotation.y += 0.005;
-    }
+    // if (model3) {
+    //     model3.rotation.y += 0.005;
+    // }
 
     renderer2.render(scene2, camera3);
 }
@@ -321,19 +305,3 @@ window.addEventListener('wheel', (e) => {
 
 // Appelez animate() pour démarrer la boucle de rendu
 animate2();
-
-
-// Variables pour le slider automatique
-// let currentSlide = 0;
-// const slides = document.querySelectorAll('.Slider > main');
-// const interval = 5000; // Intervalle en millisecondes (par exemple, 5000ms pour 5 secondes)
-
-// // Fonction pour afficher la diapositive suivante
-// function nextSlide() {
-//     slides[currentSlide].classList.remove('active');
-//     currentSlide = (currentSlide + 1) % slides.length;
-//     slides[currentSlide].classList.add('active');
-// }
-
-// // Activer le slider automatique
-// setInterval(nextSlide, interval);
