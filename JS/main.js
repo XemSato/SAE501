@@ -1,7 +1,7 @@
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js";
-  import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js";
-  import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js";
-  
+// import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js";
+//   import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js";
+//   import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js";
+  import * as THREE from "three";
 
 
 
@@ -100,19 +100,19 @@ const descriptions = [
   scene.add(light2);
   
   // Chargez un modèle 3D glTF
-  const loader = new GLTFLoader();
+  // const loader = new GLTFLoader();
   
-  let model1, model2;
+  // let model1, model2;
   
-  // Chargez le premier modèle 3D
-  loader.load('3D/Lime/scene.gltf', (gltf) => {
-      model1 = gltf.scene;
-      model1.position.set(-100, 0, 0); // Positionnez le premier modèle
-      model1.scale.set(1000, 1000, 1000);
-      scene.add(model1);
-  }, undefined, (error) => {
-      console.error('Erreur de chargement du modèle 3D', error);
-  });
+  // // Chargez le premier modèle 3D
+  // loader.load('3D/Lime/scene.gltf', (gltf) => {
+  //     model1 = gltf.scene;
+  //     model1.position.set(-100, 0, 0); // Positionnez le premier modèle
+  //     model1.scale.set(1000, 1000, 1000);
+  //     scene.add(model1);
+  // }, undefined, (error) => {
+  //     console.error('Erreur de chargement du modèle 3D', error);
+  // });
   
 
   
@@ -128,9 +128,9 @@ const descriptions = [
       // Effectuez des mises à jour ou des animations ici
   
       // Faites tourner chaque modèle sur lui-même
-      if (model1) {
-          model1.rotation.y += 0.005;
-      }
+      // if (model1) {
+      //     model1.rotation.y += 0.005;
+      // }
   
       renderer.render(scene, camera);
   }
@@ -184,10 +184,10 @@ scene2.add(light4);
 // Chargez un modèle 3D glTF
 const loader2 = new GLTFLoader();
 
-let model3, model4, model5, model6, model7, model8, model9, model10;
+let model3, model4, model5, model6, model7, model8;
 
 
-loader2.load('Models 3D/ice_cream_-_3december2020_day9.glb', (gltf) => {
+loader2.load('models_3D/ice_cream_-_3december2020_day9.glb', (gltf) => {
    model3 = gltf.scene;
   model3.position.set(0, 0, 0);
  model3.scale.set(10, 10, 10);
@@ -199,7 +199,7 @@ loader2.load('Models 3D/ice_cream_-_3december2020_day9.glb', (gltf) => {
 });
 
 
-loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
+loader2.load('models_3D/worlds_last_choco_taco.glb', (gltf) => {
   model4 = gltf.scene;
   model4.position.set(150, 80, -200);
   model4.rotation.set(Math.PI / 2, Math.PI / 2, 0);
@@ -211,7 +211,7 @@ loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
 });
 
 
-loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
+loader2.load('models_3D/worlds_last_choco_taco.glb', (gltf) => {
   model5 = gltf.scene;
   model5.position.set(-300, 150, -200);
   model5.rotation.set(Math.PI / 2, Math.PI / 1, 0);
@@ -222,7 +222,7 @@ loader2.load('Models 3D/worlds_last_choco_taco.glb', (gltf) => {
  console.error('Erreur de chargement du modèle 3D', error);
 });
 
-loader2.load('Models 3D/splash (2).glb', (gltf) => {
+loader2.load('models_3D/splash_(2).glb', (gltf) => {
   model6 = gltf.scene;
   model6.position.set(0, 300, 0);
   model6.scale.set(50, 50, 50);
@@ -232,7 +232,7 @@ loader2.load('Models 3D/splash (2).glb', (gltf) => {
  console.error('Erreur de chargement du modèle 3D', error);
 });
 
-loader2.load('Models 3D/splash.glb', (gltf) => {
+loader2.load('models_3D/splash.glb', (gltf) => {
   model7 = gltf.scene;
   model7.position.set(-50, 100, -100);
   model7.scale.set(30, 30, 30);
@@ -246,7 +246,7 @@ let light5 = new THREE.PointLight(0xFFFFFF);
 light5.position.set(100, 200, 300);
 scene2.add(light5);
 
-loader2.load('Models 3D/ice_cube.glb', (gltf) => {
+loader2.load('models_3D/ice_cube.glb', (gltf) => {
   model8 = gltf.scene;
   model8.position.set(100, 100, 200);
   model8.scale.set(0.4, 0.4, 0.4);
@@ -257,7 +257,7 @@ loader2.load('Models 3D/ice_cube.glb', (gltf) => {
  console.error('Erreur de chargement du modèle 3D', error);
 });
 
-loader2.load('Models 3D/ice_cube.glb', (gltf) => {
+loader2.load('models_3D/ice_cube.glb', (gltf) => {
   model8 = gltf.scene;
   model8.position.set(-100, 100, -200);
   model8.scale.set(0.4, 0.4, 0.4);

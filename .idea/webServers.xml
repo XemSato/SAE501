@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="408026d5-a14c-4d0a-a42f-318c918a9084" name="vps" url="https://ip87-106-123-60.pbiaas.com/">
+        <fileTransfer accessType="SFTP" host="87.106.123.60" port="22" sshConfigId="bc57e192-d7eb-4b9f-a207-9ab75e282cf5" sshConfig="lorenzo@87.106.123.60:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
